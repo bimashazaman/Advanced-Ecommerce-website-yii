@@ -37,14 +37,26 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+
+        // 'assetManager' => [
+        //     'bundles' => [
+        //         \yii\bootstrap5\BootstrapAsset::class => [
+        //             'sourcePath' => null,
+        //             'baseUrl' => '@web/assets/bootstrap5',
+        //             'css' => [
+        //                 'css/bootstrap.min.css',
+        //             ],
+        //         ],
+        //     ],
+        // ],
+        
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
             ],
         ],
-        */
+        
     ],
     'params' => $params,
 ];
