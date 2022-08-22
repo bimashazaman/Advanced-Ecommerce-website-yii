@@ -33,9 +33,12 @@ AppAsset::register($this);
         'options' => [
             'class' => 'navbar navbar-expand-md shadow fixed-top',
             'style' => 'background-color: #DCDCDC;
+
             border-bottom: 2px solid #D3D3D3;
-            color: #000000;
+            color: black;
             '
+            
+
         ],
     ]);
     $menuItems = [
@@ -48,16 +51,21 @@ AppAsset::register($this);
     }
 
     echo Nav::widget([
-        'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0'],
+        'options' => ['class' => 'navbar-nav me-auto mb-2 mb-md-0',
+    'style' => 'color: black;'],
+        
         'items' => $menuItems,
     ]);
     if (Yii::$app->user->isGuest) {
         echo Html::tag('div',Html::a('Login',['/site/login'],['class' => ['btn btn-link login text-decoration-none']]),['class' => ['d-flex']]);
     } else {
-        echo Html::beginForm(['/site/logout'], 'post', ['class' => 'd-flex'])
+        echo Html::beginForm(['/site/logout'], 'post', ['class' => 'd-flex bg-red'])
             . Html::submitButton(
                 'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout text-decoration-none']
+                ['class' => 'btn bg-red logout text-decoration-none text-bold',
+                    'style' => 'color: red; font-weight: 500;'
+                ]
+                
             )
             . Html::endForm();
     }
