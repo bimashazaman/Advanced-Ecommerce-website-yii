@@ -5,9 +5,7 @@ use yii\bootstrap5\ActiveForm;
 use dosamigos\ckeditor\CKEditor;
 
 
-/* @var $this yii\web\View */
-/* @var $model common\models\Product */
-/* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="product-form">
@@ -20,10 +18,12 @@ use dosamigos\ckeditor\CKEditor;
         'options' => ['rows' => 6],
         'preset' => 'basic'
     ]) ?>
-
-    <?= $form->field($model, 'image')->textInput(['maxlength' => true]) ?>
-
+    
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'image')->fileInput(['maxlength' => true]) ?>
+
+    
 
     <?= $form->field($model, 'status')->checkbox() ?>
 
