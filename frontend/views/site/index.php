@@ -15,19 +15,19 @@ $this->title = 'Bimasha Bazar';
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="https://img.freepik.com/premium-psd/headphone-brand-product-sale-facebook-cover-banner_161103-93.jpg?w=2000" class="d-block w-100" style="height: 373px" alt="...">
+      <img src="https://img.freepik.com/premium-psd/headphone-brand-product-sale-facebook-cover-banner_161103-93.jpg?w=2000" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://img.freepik.com/premium-psd/headphone-brand-product-facebook-cover-banner-design_268949-35.jpg" class="d-block w-100" style="height: 373px" alt="...">
+      <img src="https://img.freepik.com/premium-psd/headphone-brand-product-facebook-cover-banner-design_268949-35.jpg" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
         
       </div>
     </div>
     <div class="carousel-item">
-      <img src="https://i.ytimg.com/vi/4eC-N10IJ38/maxresdefault.jpg" class="d-block w-100" style="height: 373px" alt="...">
+      <img src="https://i.ytimg.com/vi/4eC-N10IJ38/maxresdefault.jpg" class="d-block w-100"  alt="...">
       <div class="carousel-caption d-none d-md-block">
        
       </div>
@@ -45,7 +45,7 @@ $this->title = 'Bimasha Bazar';
 
 
 
-<div style="padding: 100px;">
+<div style="padding: 10%;">
 
 <?php echo \yii\widgets\ListView::widget([
     'dataProvider' => $dataProvider,
