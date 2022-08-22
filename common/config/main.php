@@ -9,5 +9,15 @@ return [
         'cache' => [
             'class' => \yii\caching\FileCache::class,
         ],
+
+        'formatter' => [
+            'class' => \yii\i18n\Formatter::class,
+            'dateFormat' => 'php:d-M-Y h-i',
+            'datetimeFormat' => 'php:d-M h-i',
+    
+            'decimalSeparator' => ',',
+            'thousandSeparator' => ' ',
+            'currencyCode' => '$',
+        ],
     ],
 ];

@@ -28,7 +28,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'attribute' => 'id',
                     'contentOptions' => [
-                        'style' => 'width: 50px'
+                        'style' => 'width: 60px'
                     ]
                 ],
                 [
@@ -36,7 +36,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'attribute' => 'image',
                     'content' => function ($model) {
                         /** @var \common\models\Product $model */
-                        return Html::img($model->getImageUrl(), ['style' => 'width: 100px; align: center; align-items: center; margin: auto; text-align: center;']);
+                        return Html::img($model->getImageUrl(), ['style' => 'width: 50px']);
                     }
                 ],
                 [
@@ -45,26 +45,26 @@ $this->params['breadcrumbs'][] = $this->title;
                         return \yii\helpers\StringHelper::truncateWords($model->name, 7);
                     }
                 ],
-                'price',
-                // [
-                //     'attribute' => 'status',
-                //     'content' => function ($model) {
-                //         /** @var \common\models\Product $model */
-                //         return Html::tag('span', $model->status ? 'Active' : 'Draft', [
-                //             'class' => $model->status ? 'badge badge-success' : 'badge badge-danger'
-                //         ]);
-                //     }
-                // ],
+                'price:currency',
+                [
+                    'attribute' => 'status',
+                    'content' => function ($model) {
+                        /** @var \common\models\Product $model */
+                        return Html::tag('span', $model->status ? 'Active' : 'Draft', [
+                            'class' => $model->status ? 'badge badge-success' : 'badge badge-danger'
+                        ]);
+                    }
+                ],
                 [
                     'attribute' => 'created_at',
                     'format' => ['datetime'],
                     'contentOptions' => ['style' => 'white-space: nowrap']
                 ],
-                // [
-                //     'attribute' => 'updated_at',
-                //     'format' => ['datetime'],
-                //     'contentOptions' => ['style' => 'white-space: nowrap']
-                // ],
+                [
+                    'attribute' => 'updated_at',
+                    'format' => ['datetime'],
+                    'contentOptions' => ['style' => 'white-space: nowrap']
+                ],
                 //'created_by',
                 //'updated_by',
 
