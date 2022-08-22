@@ -22,7 +22,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100" style="background-color:#e5e4e2 ;">
 <?php $this->beginBody() ?>
 
 <header>
@@ -31,7 +31,11 @@ AppAsset::register($this);
         'brandLabel' => Yii::$app->name,
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar navbar-expand-md navbar-dark bg-dark fixed-top',
+            'class' => 'navbar navbar-expand-md shadow fixed-top',
+            'style' => 'background-color: #DCDCDC;
+            border-bottom: 2px solid #D3D3D3;
+            color: #000000;
+            '
         ],
     ]);
     $menuItems = [
