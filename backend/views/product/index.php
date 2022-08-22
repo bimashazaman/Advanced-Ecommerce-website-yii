@@ -1,9 +1,6 @@
 <?php
 
-use common\models\Product;
 use yii\helpers\Html;
-use yii\helpers\Url;
-use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
@@ -23,30 +20,63 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+    <div class="table-responsive">
+        <?= GridView::widget([
+            'dataProvider' => $dataProvider,
+            'filterModel' => $searchModel,
+            'columns' => [
+                [
+                    'attribute' => 'id',
+                    'contentOptions' => [
+                        'style' => 'width: 50px'
+                    ]
+                ],
+                [
+                    'label' => 'Image',
+                    'attribute' => 'image',
+                    'content' => function ($model) {
+                        /** @var \common\models\Product $model */
+                        return Html::img($model->getImageUrl(), ['style' => 'width: 100px; align: center; align-items: center; margin: auto; text-align: center;']);
+                    }
+                ],
+                [
+                    'attribute' => 'name',
+                    'content' => function ($model) {
+                        return \yii\helpers\StringHelper::truncateWords($model->name, 7);
+                    }
+                ],
+                'price',
+                // [
+                //     'attribute' => 'status',
+                //     'content' => function ($model) {
+                //         /** @var \common\models\Product $model */
+                //         return Html::tag('span', $model->status ? 'Active' : 'Draft', [
+                //             'class' => $model->status ? 'badge badge-success' : 'badge badge-danger'
+                //         ]);
+                //     }
+                // ],
+                [
+                    'attribute' => 'created_at',
+                    'format' => ['datetime'],
+                    'contentOptions' => ['style' => 'white-space: nowrap']
+                ],
+                // [
+                //     'attribute' => 'updated_at',
+                //     'format' => ['datetime'],
+                //     'contentOptions' => ['style' => 'white-space: nowrap']
+                // ],
+                //'created_by',
+                //'updated_by',
 
-            'id',
-            'name',
-            'description:ntext',
-            'image',
-            'price',
-            //'status',
-            //'created_at',
-            //'updated_at',
-            //'created_by',
-            //'updated_by',
-            [
-                'class' => ActionColumn::className(),
-                'urlCreator' => function ($action, Product $model, $key, $index, $column) {
-                    return Url::toRoute([$action, 'id' => $model->id]);
-                 }
+                [
+                    'class' => 'common\grid\ActionColumn',
+                    'contentOptions' => [
+                        'class' => 'td-actions'
+                    ]
+                ],
             ],
-        ],
-    ]); ?>
+        ]); ?>
+    </div>
 
 
 </div>
