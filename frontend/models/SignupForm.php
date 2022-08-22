@@ -1,27 +1,28 @@
 <?php
-
 namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
 use common\models\User;
 
-/**
- * Signup form
- */
+
 class SignupForm extends Model
 {
+    public $firstname;
+    public $lastname;
     public $username;
     public $email;
     public $password;
 
 
-    /**
-     * {@inheritdoc}
-     */
+   
     public function rules()
     {
         return [
+            ['firstname', 'required'],
+            ['firstname', 'string', 'max' => '255'],
+            ['lastname', 'required'],
+            ['lastname', 'string', 'max' => '255'],
             ['username', 'trim'],
             ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
@@ -50,13 +51,15 @@ class SignupForm extends Model
         }
         
         $user = new User();
+        $user->firstname = $this->firstname;
+        $user->lastname = $this->lastname;
         $user->username = $this->username;
         $user->email = $this->email;
         $user->setPassword($this->password);
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
-
         return $user->save() && $this->sendEmail($user);
+
     }
 
     /**
