@@ -4,7 +4,17 @@ namespace common\models;
 
 use Yii;
 
-
+/**
+ * This is the model class for table "{{%cart_items}}".
+ *
+ * @property int      $id
+ * @property int      $product_id
+ * @property int      $quantity
+ * @property int|null $created_by
+ *
+ * @property User     $createdBy
+ * @property Product  $product
+ */
 class CartItem extends \yii\db\ActiveRecord
 {
     const SESSION_KEY = 'CART_ITEMS';

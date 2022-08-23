@@ -19,12 +19,7 @@ use yii\web\BadRequestHttpException;
 use yii\web\NotFoundHttpException;
 use yii\web\Response;
 
-/**
- * Class CartController
- *
- * @author  Zura Sekhniashvili <zurasekhniashvili@gmail.com>
- * @package frontend\controllers
- */
+
 class CartController extends \frontend\base\Controller
 {
     public function behaviors()

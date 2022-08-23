@@ -8,7 +8,7 @@ use yii\bootstrap5\ActiveForm;
 <?php $form = ActiveForm::begin([
     'id' => 'checkout-form',
 ]); ?>
-<div class="row">
+<div class="row" style="padding: 100px ;">
     <div class="col">
         <div class="card mb-3">
             <div class="card-header">

@@ -1,14 +1,6 @@
-<?php
-/**
- * User: TheCodeholic
- * Date: 12/12/2020
- * Time: 3:42 PM
- */
-/** @var array $items */
-?>
 
 
-<div class="card">
+<div class="card" style="padding:100px ;">
     <div class="card-header">
         <h3>Your cart items</h3>
     </div>

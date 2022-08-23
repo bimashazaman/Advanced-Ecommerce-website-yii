@@ -91,7 +91,14 @@ AppAsset::register($this);
                     <span>Products</span></a>
             </li>
 
-            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+            <a class="nav-link" href="<?php echo \yii\helpers\Url::to(['/order/index']) ?>">
+                <i class="fas fa-money-check-alt"></i>
+                <span>Orders</span>
+            </a>
+        </li>
+
+            <!-- Nav Item - Tables View -->
            
 
             <!-- Divider -->
