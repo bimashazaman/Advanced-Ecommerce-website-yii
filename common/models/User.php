@@ -217,17 +217,13 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
-    /**
-     * Generates new token for email verification
-     */
+  
     public function generateEmailVerificationToken()
     {
         $this->verification_token = Yii::$app->security->generateRandomString() . '_' . time();
     }
 
-    /**
-     * Removes password reset token
-     */
+   
     public function removePasswordResetToken()
     {
         $this->password_reset_token = null;
@@ -239,19 +235,13 @@ class User extends ActiveRecord implements IdentityInterface
         return $fullName ?: $this->email;
     }
 
-    /**
-     * @return mixed
-     * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
-     */
+    
     public function getAddresses()
     {
         return $this->hasMany(UserAddress::class, ['user_id' => 'id']);
     }
 
-    /**
-     * @return \common\models\UserAddress|null
-     * @author Zura Sekhniashvili <zurasekhniashvili@gmail.com>
-     */
+    
     public function getAddress(): ?UserAddress
     {
         $address = $this->addresses[0] ?? new UserAddress();
